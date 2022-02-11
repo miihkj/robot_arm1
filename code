@@ -1,0 +1,66 @@
+void setup(){
+  size(800,800, P3D);  
+  noStroke();  
+}
+
+float rotX,rotY;
+  
+void draw(){
+  background(32);
+  
+  translate(width/2, height/2);
+  rotateX(rotX);
+  rotateY(-rotY); 
+ 
+float xe,ye,ze;
+  xe=0;
+  ye=169.7;
+  ze=100;
+
+float θ1,θ2,θ3;
+  θ1=PI/2;
+  θ2=PI/4;
+  θ3=PI/2;
+
+  //base
+  translate(0,-120,-5);
+  fill(175);
+  box(30,30,10);
+  
+  //1st link
+  translate(0,0,5);
+  
+  pushMatrix();
+  translate(ye,xe,ze);
+  fill(100,0,0);
+  sphere(20);
+  popMatrix();
+  
+  rotateZ(-θ1);
+  
+  translate(0,0,50);
+  fill(150);
+  box(10,10,100);
+  
+  //2nd link
+  translate(0,0,50);
+  rotateX(-θ2);
+  
+  translate(0,0,60);
+  fill(125);
+  box(10,10,130);
+  
+  //3rd link
+  translate(0,0,60);
+  rotateX(-θ3);
+  
+  translate(0,0,60);
+  fill(100);
+  box(10,10,120);
+
+}
+
+void mouseDragged(){
+    rotY -= (mouseX - pmouseX) * 0.01;
+    rotX -= (mouseY - pmouseY) * 0.01;
+}
