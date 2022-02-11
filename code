@@ -13,12 +13,12 @@ void draw(){
   rotateY(-rotY); 
  
 float xe,ye,ze;
-  xe=0;
-  ye=169.7;
+  xe=120;
+  ye=120;
   ze=100;
 
 float θ1,θ2,θ3;
-  θ1=PI/2;
+  θ1=PI/4;
   θ2=PI/4;
   θ3=PI/2;
 
@@ -31,7 +31,7 @@ float θ1,θ2,θ3;
   translate(0,0,5);
   
   pushMatrix();
-  translate(ye,xe,ze);
+  translate(xe,ye,ze);
   fill(100,0,0);
   sphere(20);
   popMatrix();
